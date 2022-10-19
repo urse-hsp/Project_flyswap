@@ -22,7 +22,6 @@ const GlobalHeaderRight: React.FC = () => {
   }
   return (
     <Space className={className}>
-      <div className={styles.main}>
         {/* <Avatar /> */}
         <div className={styles.money}>
           <GlobalOutlined />
@@ -37,7 +36,6 @@ const GlobalHeaderRight: React.FC = () => {
           style={{ fontSize: '19px', color: 'var(--ant-primary-color)', display: 'flex' }}
         />
         <div className={styles.wallet}>Connect Wallet</div>
-      </div>
     </Space>
   );
 };
