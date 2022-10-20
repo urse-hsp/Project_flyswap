@@ -1,13 +1,22 @@
 // 运行时配置文件
+import React, { useState } from 'react';
 import Footer from '@/components/Footer';
+// import HeaderView from '@/components/Header';
+
+import TabNavigation from '@/components/Header/tabNavigation';
+
 import RightContent from '@/components/Header/RightContent';
 import type { Settings as LayoutSettings } from '@ant-design/pro-components';
+// import { PageContainer, DefaultHeader } from '@ant-design/pro-components';
+
 import { SettingDrawer } from '@ant-design/pro-components';
 import type { RunTimeLayoutConfig } from '@umijs/max';
-// import { history } from '@umijs/max';
 import defaultSettings from '../config/defaultSettings';
 import { errorConfig } from './utils/requestErrorConfig';
 import { currentUser as queryCurrentUser } from './services/ant-design-pro/api';
+// import { history } from '@umijs/max';
+import routesList from '../config/routes';
+// import { getMenuData } from '@ant-design/pro-components';
 
 // const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
@@ -53,13 +62,36 @@ export const layout: RunTimeLayoutConfig = ({
   initialState,
   setInitialState,
 }) => {
+  // const match = useRouteData();
+  // console.log(match);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [routeData, setRouteData] = useState<any[]>([]);
   return {
     rightContentRender: () => <RightContent />,
     waterMarkProps: {
       content: initialState?.currentUser?.name,
     },
     footerRender: () => <Footer />,
-    onPageChange: () => {
+    onPageChange: ({ pathname }) => {
+      const forRoute = () => {
+        for (let i = 0; i < routesList.length; i++) {
+          const list: any = routesList[i]?.routes;
+          if (list) {
+            for (let j = 0; j < list.length; j++) {
+              console.log(666);
+              if (pathname === list[j].path) {
+                console.log(routesList[i].routes);
+                setRouteData(routesList[i].routes);
+                // this.$message(‘名字重复了！')
+                break;
+              }
+            }
+          }
+        }
+      };
+      forRoute();
+      // console.log(pathname, 777, history, routesList);
+
       // const { location } = history;
       // 如果没有登录，重定向到 login
       // if (!initialState?.currentUser && location.pathname !== loginPath) {
@@ -77,18 +109,20 @@ export const layout: RunTimeLayoutConfig = ({
         colorTextMenuActive: '#4B9F94',
       },
     },
-    // 增加一个 loading 的状态
     childrenRender: (children, props) => {
       // if (initialState?.loading) return <PageLoading />;
       return (
         <>
-          {children}
+          {routeData?.length > 0 && <TabNavigation data={routeData} />}
+          <div className="root-main">{children}</div>
           {!props.location?.pathname?.includes('/login') && (
             <SettingDrawer
               disableUrlParams
               enableDarkTheme
               settings={initialState?.settings}
               onSettingChange={(settings) => {
+                console.log(settings, 'settings');
+
                 setInitialState((preInitialState) => ({
                   ...preInitialState,
                   settings,

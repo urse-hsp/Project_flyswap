@@ -6,6 +6,6 @@ interface BridgeType {
 }
 
 const Bridge: React.FC<BridgeType> = () => {
-  return <>Bridge</>;
+  return <div style={{ height: '1000px' }}>Bridge</div>;
 };
 export default Bridge;

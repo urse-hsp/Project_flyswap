@@ -8,5 +8,5 @@ export default {
   'menu.bridge': 'Bridge',
   'menu.earn': 'Earn',
   'menu.earn.farms': 'Farms',
-  'menu.earn.Pools': 'Pools',
+  'menu.earn.pools': 'Pools',
 };
