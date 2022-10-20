@@ -1,9 +1,12 @@
 export default {
   'menu.login': '登录',
-  'menu.Trade': 'Trade',
-  'menu.Trade.Swap': 'Swap',
-  'menu.Trade.Liquidity': 'Liquidity',
-  'menu.Trade.Bridge': 'Bridge',
-  'menu.Bridge1': 'Bridge1',
-  'menu.Earn': 'Earn',
+  'menu.trade': 'Trade',
+  'menu.trade.swap': 'Swap',
+  'menu.trade.liquidity': 'Liquidity',
+  'menu.trade.tradeBridge': 'Bridge',
+
+  'menu.bridge': 'Bridge',
+  'menu.earn': 'Earn',
+  'menu.earn.farms': 'Farms',
+  'menu.earn.Pools': 'Pools',
 };

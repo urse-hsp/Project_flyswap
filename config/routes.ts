@@ -21,45 +21,50 @@ export default [
     ],
   },
   {
-    path: '/Trade',
-    name: 'Trade',
+    path: '/trade',
+    name: 'trade',
     routes: [
       {
-        name: 'Swap',
-        path: '/Trade/Swap',
+        name: 'swap',
+        path: '/trade/swap',
         component: './Welcome',
       },
       {
-        name: 'Liquidity',
-        path: '/Trade/Liquidity',
+        name: 'liquidity',
+        path: '/trade/liquidity',
         component: './Welcome',
       },
       {
-        name: 'Bridge',
-        path: '/Trade/Bridge',
+        name: 'tradeBridge',
+        path: '/trade/bridge',
         component: './Welcome',
       },
     ],
   },
   {
-    path: '/Bridge',
-    name: 'Bridge1',
+    path: '/bridge',
+    name: 'bridge',
     component: './Welcome',
   },
   {
-    path: '/Earn',
-    name: 'Earn',
-    component: './Welcome',
+    path: '/earn',
+    name: 'earn',
+    routes: [
+      {
+        name: 'farms',
+        path: '/earn/farms',
+        component: './Welcome',
+      },
+      {
+        name: 'pools',
+        path: '/earn/pools',
+        component: './Welcome',
+      },
+    ],
   },
-  // {
-  //   name: 'list.table-list',
-  //   // icon: 'table',
-  //   path: '/list',
-  //   component: './TableList',
-  // },
   {
     path: '/',
-    redirect: '/Trade',
+    redirect: '/trade',
   },
   {
     path: '*',
