@@ -27,24 +27,24 @@ export default [
       {
         name: 'swap',
         path: '/trade/swap',
-        component: './Welcome',
+        component: './trade/swap',
       },
       {
         name: 'liquidity',
         path: '/trade/liquidity',
-        component: './Welcome',
+        component: './trade/liquidity',
       },
       {
         name: 'tradeBridge',
         path: '/trade/bridge',
-        component: './Welcome',
+        component: './trade/bridge',
       },
     ],
   },
   {
     path: '/bridge',
     name: 'bridge',
-    component: './Welcome',
+    component: './bridge',
   },
   {
     path: '/earn',
@@ -53,12 +53,12 @@ export default [
       {
         name: 'farms',
         path: '/earn/farms',
-        component: './Welcome',
+        component: './earn/farms',
       },
       {
         name: 'pools',
         path: '/earn/pools',
-        component: './Welcome',
+        component: './earn/pools',
       },
     ],
   },
