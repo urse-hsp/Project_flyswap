@@ -25,3 +25,20 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.ellipsis {
+  width: value;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// 文字省略号
+.ellipsis2 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  display: box;
+  -webkit-box-orient: vertical;
+}

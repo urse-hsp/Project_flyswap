@@ -1,5 +1,6 @@
 import { GlobalOutlined, ArrowRightOutlined } from '@ant-design/icons';
-
+import classNames from 'classNames';
+import { getLocale } from '@umijs/max';
 import { Divider, Button } from 'antd';
 import Money from '@/components/Header/RightContent/money';
 import footer_logo_img from '@/assets/images/logo/footer_logo.png';
@@ -25,14 +26,13 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <Divider style={{ backgroundColor: '#57565E' }}></Divider>
-        <div className={styles.wrap + ' flexBetween'}>
-          <div>
+        <div className={classNames(styles.wrap, styles.state, 'flexBetween')}>
+          <div className={styles.locales}>
             <GlobalOutlined />
-            EN
+            {getLocale()}
           </div>
           <div className="flex">
             <Money />
-            {/* <button>BUY FLY</button> */}
             <Button type="primary" shape="circle" className={styles.btn}>
               BUY FLY
               <ArrowRightOutlined />

@@ -20,21 +20,65 @@
   margin-left: auto;
   overflow: hidden;
 
-  .name {
-    width: 70px;
-    height: 48px;
-    overflow: hidden;
-    line-height: 48px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  .action {
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    max-width: 151px;
+    height: 32px;
+    background-color: #f7f7f7;
+    border: 1px solid #f7f7f7;
+    border-radius: 18px;
+    // padding: 0 16px 0 0;
+    // height: 48px;
+    padding-left: 0;
+
+    > span {
+      vertical-align: middle;
+    }
+
+    &:hover {
+      background: @pro-header-hover-bg;
+    }
+
+    &:global(.opened) {
+      background: @pro-header-hover-bg;
+    }
+
+    .name {
+      width: 30px;
+      height: 48px;
+      overflow: hidden;
+      line-height: 48px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .icon {
+      margin-left: 14px;
+      margin-right: 16px;
+    }
   }
 
   .account {
     .avatar {
-      margin-right: 8px;
+      // margin-right: 8px;
+      width: 31px;
+      height: 31px;
+      margin-right: 10px;
       color: @primary-color;
       vertical-align: top;
-      background: rgb(255 255 255 / 85%);
+      background-color: rgb(255 255 255 / 85%);
+    }
+  }
+
+  .search {
+    padding: 0 12px;
+
+    &:hover {
+      background: transparent;
     }
   }
 
@@ -46,6 +90,9 @@
     height: 32px;
     background: @primary-color;
     border-radius: 21px;
+    font-weight: 600;
+    color: #fff;
+    font-size: 16px;
   }
 }
 
@@ -66,7 +113,8 @@
     vertical-align: unset;
   }
 
-  .name {
+  .name,
+  .icon {
     display: none;
   }
 
@@ -76,11 +124,30 @@
     right: 12px;
     display: flex;
     align-items: center;
+    justify-content: center;
+
+    .action {
+      padding: 0;
+    }
 
     .account {
       .avatar {
         margin-right: 0;
       }
     }
+
+    .wallet {
+      width: 100px;
+      height: 32px;
+      font-size: 12px;
+    }
+    // :global {
+    //   // .ant-space-item {
+    //   //   transform: scale(0.8);
+    //   // }
+    //   // .ant-dropdown-trigger {
+    //   //   padding: 0;
+    //   // }
+    // }
   }
 }

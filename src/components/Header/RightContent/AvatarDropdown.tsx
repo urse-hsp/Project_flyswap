@@ -1,7 +1,13 @@
+import { useIntl } from '@umijs/max';
 import { outLogin } from '@/services/ant-design-pro/api';
-import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
+import {
+  LogoutOutlined,
+  SettingOutlined,
+  UserOutlined,
+  DownOutlined,
+} from '@ant-design/icons';
 import { history, useModel } from '@umijs/max';
-import { Avatar, Menu, Spin } from 'antd';
+import { Avatar, Menu } from 'antd';
 import type { ItemType } from 'antd/es/menu/hooks/useItems';
 import { stringify } from 'querystring';
 import type { MenuInfo } from 'rc-menu/lib/interface';
@@ -11,6 +17,28 @@ import styles from './index.less';
 
 export type GlobalHeaderRightProps = {
   menu?: boolean;
+};
+
+export const AvatarBox = (props: any) => {
+  const { currentUser, icon = true } = props;
+  return (
+    <span className={`${styles.action} ${styles.account}`}>
+      <Avatar
+        size="small"
+        className={styles.avatar}
+        src={currentUser.avatar}
+        alt="avatar"
+      />
+      <span className={`${styles.name} anticon ellipsis`}>
+        {currentUser.name}
+      </span>
+      {icon && (
+        <span className={styles.icon}>
+          <DownOutlined style={{ fontSize: '15px' }} />
+        </span>
+      )}
+    </span>
+  );
 };
 
 const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
@@ -33,7 +61,8 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
       });
     }
   };
-  const { initialState, setInitialState } = useModel('@@initialState');
+  // const { initialState, setInitialState } = useModel('@@initialState');
+  const { setInitialState } = useModel('@@initialState');
 
   const onMenuClick = useCallback(
     (event: MenuInfo) => {
@@ -48,27 +77,27 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
     [setInitialState],
   );
 
-  const loading = (
-    <span className={`${styles.action} ${styles.account}`}>
-      <Spin
-        size="small"
-        style={{
-          marginLeft: 8,
-          marginRight: 8,
-        }}
-      />
-    </span>
-  );
+  // const loading = (
+  //   <span className={`${styles.action} ${styles.account}`}>
+  //     <Spin
+  //       size="small"
+  //       style={{
+  //         marginLeft: 8,
+  //         marginRight: 8,
+  //       }}
+  //     />
+  //   </span>
+  // );
 
-  if (!initialState) {
-    return loading;
-  }
+  // if (!initialState) {
+  //   return loading;
+  // }
 
-  const { currentUser } = initialState;
-
-  if (!currentUser || !currentUser.name) {
-    return loading;
-  }
+  // const { currentUser } = initialState;
+  // if (!currentUser || !currentUser.name) {
+  //   return loading;
+  // }
+  const intl = useIntl();
 
   const menuItems: ItemType[] = [
     ...(menu
@@ -91,20 +120,30 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
     {
       key: 'logout',
       icon: <LogoutOutlined />,
-      label: '退出登录',
+      label: intl.formatMessage({ id: 'signOut' }),
     },
   ];
 
   const menuHeaderDropdown = (
-    <Menu className={styles.menu} selectedKeys={[]} onClick={onMenuClick} items={menuItems} />
+    <Menu
+      className={styles.menu}
+      selectedKeys={[]}
+      onClick={onMenuClick}
+      items={menuItems}
+    />
   );
+
+  const currentUser = {
+    avatar:
+      'https://img2.baidu.com/it/u=2833484760,1116678162&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1666371600&t=2750c5d017ecef75a369acb5ad70579a',
+    name: 123,
+  };
 
   return (
     <HeaderDropdown overlay={menuHeaderDropdown}>
-      <span className={`${styles.action} ${styles.account}`}>
-        <Avatar size="small" className={styles.avatar} src={currentUser.avatar} alt="avatar" />
-        <span className={`${styles.name} anticon`}>{currentUser.name}</span>
-      </span>
+      <div>
+        <AvatarBox currentUser={currentUser} />
+      </div>
     </HeaderDropdown>
   );
 };

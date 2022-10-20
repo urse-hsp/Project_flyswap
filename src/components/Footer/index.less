@@ -6,6 +6,7 @@
   background: #27262c;
   padding: 51px 16px;
   color: #fff;
+  overflow: hidden;
 
   .main {
     width: 100%;
@@ -29,6 +30,16 @@
         margin-right: 22px;
       }
     }
+
+    .locales {
+      :global(.anticon) {
+        margin-right: 6px;
+      }
+    }
+
+    .state {
+      margin-top: 28px;
+    }
   }
 
   .divider {
@@ -44,8 +55,21 @@
     border-radius: 16px;
   }
 }
-// @media only screen and (max-width: @screen-md) {
-//   .footer{
-//     height: 150px;
-//   }
-// }
+@media only screen and (max-width: @screen-md) {
+  .footer {
+    padding: 14px 16px;
+    height: 145px;
+
+    .main {
+      zoom: 0.7;
+
+      .link {
+        margin-top: 20px;
+      }
+
+      .state {
+        margin: 10px;
+      }
+    }
+  }
+}

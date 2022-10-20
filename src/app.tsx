@@ -4,12 +4,12 @@ import RightContent from '@/components/Header/RightContent';
 import type { Settings as LayoutSettings } from '@ant-design/pro-components';
 import { SettingDrawer } from '@ant-design/pro-components';
 import type { RunTimeLayoutConfig } from '@umijs/max';
-import { history } from '@umijs/max';
+// import { history } from '@umijs/max';
 import defaultSettings from '../config/defaultSettings';
 import { errorConfig } from './utils/requestErrorConfig';
 import { currentUser as queryCurrentUser } from './services/ant-design-pro/api';
 
-const isDev = process.env.NODE_ENV === 'development';
+// const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
 
 /**
@@ -60,7 +60,7 @@ export const layout: RunTimeLayoutConfig = ({
     },
     footerRender: () => <Footer />,
     onPageChange: () => {
-      const { location } = history;
+      // const { location } = history;
       // 如果没有登录，重定向到 login
       // if (!initialState?.currentUser && location.pathname !== loginPath) {
       //   history.push(loginPath);
@@ -71,16 +71,12 @@ export const layout: RunTimeLayoutConfig = ({
     token: {
       header: {
         colorBgHeader: '#FFFFFF',
-        colorHeaderTitle: '#4B9F94',
         colorTextMenu: '#4B9F94',
         colorTextMenuSecondary: 'red',
         colorTextMenuSelected: '#4B9F94',
         colorTextMenuActive: '#4B9F94',
       },
     },
-    // menuHeaderRender: false,
-    // 自定义 403 页面
-    // unAccessible: <div>unAccessible</div>,
     // 增加一个 loading 的状态
     childrenRender: (children, props) => {
       // if (initialState?.loading) return <PageLoading />;
