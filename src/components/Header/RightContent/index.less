@@ -6,6 +6,7 @@
   :global(.anticon) {
     margin-right: 8px;
   }
+
   :global(.ant-dropdown-menu-item) {
     min-width: 160px;
   }
@@ -13,13 +14,12 @@
 
 .right {
   display: flex;
+  align-items: center;
   float: right;
   height: 48px;
   margin-left: auto;
   overflow: hidden;
-  .main{
-    
-  }
+
   .name {
     width: 70px;
     height: 48px;
@@ -34,7 +34,7 @@
       margin-right: 8px;
       color: @primary-color;
       vertical-align: top;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgb(255 255 255 / 85%);
     }
   }
 
@@ -44,18 +44,20 @@
     justify-content: center;
     width: 150px;
     height: 32px;
-    // color: #fff;
     background: @primary-color;
     border-radius: 21px;
   }
+}
 
-  .money {
-    color: @primary-color;
-    font-weight: bold;
-    font-size: 16px;
-    .num {
-      margin-left: 8px;
-    }
+.money {
+  color: @primary-color;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+
+  .num {
+    margin-left: 8px;
   }
 }
 
@@ -63,32 +65,22 @@
   :global(.ant-divider-vertical) {
     vertical-align: unset;
   }
+
   .name {
     display: none;
   }
+
   .right {
     position: absolute;
     top: 0;
     right: 12px;
     display: flex;
     align-items: center;
-    // justify-content: end;
+
     .account {
       .avatar {
         margin-right: 0;
       }
     }
-    // .search {
-    //   display: none;
-    // }
-    // .wallet {
-    //   width: 95px;
-    //   height: 26px;
-    //   font-size: 12px;
-    // }
-
-    // .main {
-    //   zoom: 0.8;
-    // }
   }
 }

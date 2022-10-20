@@ -2,7 +2,7 @@ import { SettingOutlined, GlobalOutlined } from '@ant-design/icons';
 import { SelectLang, useModel } from '@umijs/max';
 import { Space } from 'antd';
 import React from 'react';
-// import Avatar from './AvatarDropdown';
+import Money from './money';
 import styles from './index.less';
 
 export type SiderTheme = 'light' | 'dark';
@@ -22,20 +22,21 @@ const GlobalHeaderRight: React.FC = () => {
   }
   return (
     <Space className={className}>
-        {/* <Avatar /> */}
-        <div className={styles.money}>
-          <GlobalOutlined />
-          <span className={styles.num}>$1.45</span>
-        </div>
-        <SelectLang
-          className={styles.action}
-          style={{ color: 'var(--ant-primary-color)', display: 'flex' }}
-          icon={<GlobalOutlined />}
-        />
-        <SettingOutlined
-          style={{ fontSize: '19px', color: 'var(--ant-primary-color)', display: 'flex' }}
-        />
-        <div className={styles.wallet}>Connect Wallet</div>
+      {/* <Avatar /> */}
+      <Money />
+      <SelectLang
+        className={styles.action}
+        style={{ color: 'var(--ant-primary-color)', display: 'flex' }}
+        icon={<GlobalOutlined />}
+      />
+      <SettingOutlined
+        style={{
+          fontSize: '19px',
+          color: 'var(--ant-primary-color)',
+          display: 'flex',
+        }}
+      />
+      <div className={styles.wallet}>Connect Wallet</div>
     </Space>
   );
 };

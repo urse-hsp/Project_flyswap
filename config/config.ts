@@ -8,6 +8,7 @@ import routes from './routes';
 const { REACT_APP_ENV } = process.env;
 
 export default defineConfig({
+  // manifest: {},
   mfsu: {
     shared: {
       react: {
@@ -15,7 +16,7 @@ export default defineConfig({
       },
     },
   },
-  npmClient: 'yarn',
+  // npmClient: 'yarn',
   // mfsu: false,
   /**
    * @name 开启 hash 模式
