@@ -10,17 +10,6 @@
  */
 export default [
   {
-    path: '/user',
-    layout: false,
-    routes: [
-      {
-        name: 'login',
-        path: '/user/login',
-        component: './User/Login',
-      },
-    ],
-  },
-  {
     path: '/trade',
     name: 'trade',
     routes: [

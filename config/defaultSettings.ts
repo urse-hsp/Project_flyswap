@@ -1,9 +1,8 @@
-import { Settings as LayoutSettings } from '@ant-design/pro-components';
 // import logo_img from '@/assets/logo.png';
 /**
  * @name
  */
-const Settings: LayoutSettings & {
+const Settings: any & {
   pwa?: boolean;
   logo?: string;
 } = {
@@ -13,7 +12,7 @@ const Settings: LayoutSettings & {
   colorPrimary: '#349084',
   layout: 'top',
   contentWidth: 'Fixed',
-  fixedHeader: false,
+  fixedHeader: true,
   fixSiderbar: true,
   pwa: false,
   logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',

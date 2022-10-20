@@ -25,15 +25,15 @@ const GlobalHeaderRight: React.FC = () => {
     <Space className={className}>
       <Money />
       <SelectLang
-        style={{ color: 'var(--ant-primary-color)', display: 'flex' }}
-        icon={<GlobalOutlined />}
+        style={{ display: 'flex' }}
+        icon={<GlobalOutlined className={styles.color} />}
       />
       <SettingOutlined
         style={{
           fontSize: '19px',
-          color: 'var(--ant-primary-color)',
           display: 'flex',
         }}
+        className={styles.color} 
       />
       <div className={styles.wallet}>Connect Wallet</div>
       <AvatarBox

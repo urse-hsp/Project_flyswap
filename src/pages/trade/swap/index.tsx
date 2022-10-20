@@ -6,6 +6,6 @@ interface tradeSwapType {
 }
 
 const TradeSwap: React.FC<tradeSwapType> = () => {
-  return <>TradeSwap</>;
+  return <div style={{ height: '1000px' }}>TradeSwap</div>;
 };
 export default TradeSwap;
