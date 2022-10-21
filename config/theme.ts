@@ -6,6 +6,7 @@ export default {
   'root-entry-name': 'variable',
 
   '@primary-color': theme, // 全局主色
+  '@backcloth-color': '#effafa', // 背景色
   '@link-color': theme, // 链接色
   '@success-color': '#52c41a', // 成功色
   '@warning-color': '#faad14', // 警告色

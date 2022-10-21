@@ -8,6 +8,7 @@ import {
   SettingOutlined,
 } from '@ant-design/icons';
 import CurrencyItem from './component/currencyItem';
+import arrow_img from '@/assets/images/icon/arrow_botton.png';
 import styles from './index.less';
 const { Title, Paragraph } = Typography;
 
@@ -41,8 +42,10 @@ const TradeSwap: React.FC<tradeSwapType> = () => {
         </header>
         <Divider />
         <main className={styles.main}>
-          <CurrencyItem></CurrencyItem>
-          <div>1</div>
+          <CurrencyItem isSelect></CurrencyItem>
+          <div className="flexCenter">
+            <img src={arrow_img} className={styles.icon} />
+          </div>
           <CurrencyItem></CurrencyItem>
           <div className={styles.data}>
             <div className="flexBetween">
