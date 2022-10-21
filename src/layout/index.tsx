@@ -7,6 +7,7 @@ import RightContent from './Header/RightContent';
 import type { RunTimeLayoutConfig } from '@umijs/max';
 // import { history } from '@umijs/max';
 import routesList from '../../config/routes';
+import logo_img from '@/assets/images/logo/logo.png';
 
 // ProLayout 支持的api https://procomponents.ant.design/components/layout
 
@@ -18,6 +19,7 @@ export const layout: RunTimeLayoutConfig = ({
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [routeData, setRouteData] = useState<any[]>([]);
   return {
+    logo: logo_img,
     rightContentRender: () => <RightContent />,
     waterMarkProps: {
       content: initialState?.currentUser?.name,
@@ -50,15 +52,14 @@ export const layout: RunTimeLayoutConfig = ({
     },
     pageTitleRender: false,
     hideInMenu: false,
-    // token: {
-    //   header: {
-    //     colorBgHeader: '#FFFFFF',
-    //     colorTextMenu: '#4B9F94',
-    //     colorTextMenuSecondary: 'red',
-    //     colorTextMenuSelected: '#4B9F94',
-    //     colorTextMenuActive: '#4B9F94',
-    //   },
-    // },
+    token: {
+      header: {
+        // colorBgHeader: '#FFFFFF',
+        // colorTextMenu: '#4B9F94',
+        // colorTextMenuSelected: '#4B9F94',
+        // colorTextMenuActive: '#4B9F94',
+      },
+    },
     childrenRender: (children) => {
       if (initialState?.loading) return 123;
       return (

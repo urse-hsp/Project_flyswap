@@ -7,7 +7,6 @@ import footer_logo_img from '@/assets/images/logo/footer_logo.png';
 import twitter_logo_img from '@/assets/images/logo/twitter_logo.png';
 import telegram_logo_img from '@/assets/images/logo/telegram_logo.png';
 import facebook_logo_img from '@/assets/images/logo/facebook_logo.png';
-// import right_img from '@/assets/images/icon/right.png';
 
 import styles from './index.less';
 
@@ -29,7 +28,7 @@ const Footer: React.FC = () => {
         <div className={classNames(styles.wrap, styles.state, 'flexBetween')}>
           <div className={styles.locales}>
             <GlobalOutlined />
-            {getLocale()}
+            {getLocale().split('-')[0].toUpperCase()}
           </div>
           <div className="flex">
             <Money />

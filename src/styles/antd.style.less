@@ -1,12 +1,24 @@
 // 覆盖 antd UI 组件库样式；
+// global
 .ant-pro-layout-content {
   padding: 0 !important;
 }
 
-.root-main {
-  padding: 40px;
-}
-
 .ant-layout-content {
   background-color: #effafa !important;
+}
+
+.ant-pro-top-nav-header-logo {
+  & > a > h1 {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+  }
+}
+
+.ant-pro-base-menu-item-text {
+  color: @primary-color;
+}
+
+.ant-menu-item-selected {
+  font-weight: bold;
 }

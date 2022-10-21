@@ -1,4 +1,6 @@
 import React from 'react';
+import Item from './item';
+import styles from './index.less';
 
 interface tradeSwapType {
   isVisible?: boolean;
@@ -6,6 +8,10 @@ interface tradeSwapType {
 }
 
 const TradeSwap: React.FC<tradeSwapType> = () => {
-  return <div style={{ height: '1000px' }}>TradeSwap</div>;
+  return (
+    <div className={styles.swap}>
+      <Item />
+    </div>
+  );
 };
 export default TradeSwap;

@@ -1,4 +1,5 @@
 import { theme } from './theme';
+
 /**
  * @name
  */
@@ -15,7 +16,6 @@ const Settings: any & {
   fixedHeader: true,
   fixSiderbar: true,
   pwa: false,
-  logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
   splitMenus: false,
   iconfontUrl: '',
 };

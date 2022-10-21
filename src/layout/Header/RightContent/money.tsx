@@ -1,5 +1,6 @@
 import React from 'react';
-import { GlobalOutlined } from '@ant-design/icons';
+import Fly_logo from '@/assets/images/logo/fly_logo.png';
+
 import styles from './index.less';
 
 interface moneyType {
@@ -10,8 +11,8 @@ interface moneyType {
 const Money: React.FC<moneyType> = () => {
   return (
     <div className={styles.money}>
-      <GlobalOutlined />
-      <span className={styles.num}>$1.45</span>
+      <img src={Fly_logo} className={styles.logo} />
+      $1.45
     </div>
   );
 };
