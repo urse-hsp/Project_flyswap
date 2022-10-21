@@ -54,7 +54,7 @@ export const layout: RunTimeLayoutConfig = ({
     hideInMenu: false,
     token: {
       header: {
-        // colorBgHeader: '#FFFFFF',
+        colorBgHeader: '#FFFFFF',
         // colorTextMenu: '#4B9F94',
         // colorTextMenuSelected: '#4B9F94',
         // colorTextMenuActive: '#4B9F94',
