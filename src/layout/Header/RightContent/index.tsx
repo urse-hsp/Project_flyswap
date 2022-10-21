@@ -28,23 +28,30 @@ const GlobalHeaderRight: React.FC = () => {
         style={{ display: 'flex' }}
         icon={<GlobalOutlined className={styles.color} />}
       />
-      <SettingOutlined
-        style={{
-          fontSize: '19px',
-          display: 'flex',
-        }}
-        className={styles.color}
-      />
-      <div className={styles.wallet}>Connect Wallet</div>
-      <AvatarBox
-        currentUser={{
-          avatar:
-            'https://img2.baidu.com/it/u=2833484760,1116678162&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1666371600&t=2750c5d017ecef75a369acb5ad70579a',
-          name: 123,
-        }}
-        icon={false}
-      />
-      <Avatar />
+      {true ? (
+        <>
+          <SettingOutlined
+            style={{
+              fontSize: '19px',
+              display: 'flex',
+            }}
+            className={styles.color}
+          />
+
+          <AvatarBox
+            currentUser={{
+              avatar:
+                'https://img2.baidu.com/it/u=2833484760,1116678162&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1666371600&t=2750c5d017ecef75a369acb5ad70579a',
+              name: 123,
+            }}
+            icon={false}
+          />
+
+          <Avatar />
+        </>
+      ) : (
+        <div className={styles.wallet}>Connect Wallet</div>
+      )}
     </Space>
   );
 };

@@ -18,6 +18,7 @@ const Settings: any & {
   pwa: false,
   splitMenus: false,
   iconfontUrl: '',
+  siderWidth: '180',
 };
 
 export default Settings;

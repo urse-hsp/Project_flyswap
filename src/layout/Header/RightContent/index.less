@@ -17,9 +17,9 @@
   display: flex;
   align-items: center;
   float: right;
-  height: 48px;
   margin-left: auto;
   overflow: hidden;
+  height: 100%;
 
   .color {
     color: @primary-color;
@@ -36,8 +36,6 @@
     background-color: #f7f7f7;
     border: 1px solid #f7f7f7;
     border-radius: 18px;
-    // padding: 0 16px 0 0;
-    // height: 48px;
     padding-left: 0;
 
     > span {
@@ -69,7 +67,6 @@
 
   .account {
     .avatar {
-      // margin-right: 8px;
       width: 31px;
       height: 31px;
       margin-right: 10px;
@@ -120,9 +117,11 @@
     vertical-align: unset;
   }
 
-  .name,
-  .icon {
-    display: none;
+  .action {
+    .name,
+    .icon {
+      display: none;
+    }
   }
 
   .right {
