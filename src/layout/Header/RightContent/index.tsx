@@ -33,7 +33,7 @@ const GlobalHeaderRight: React.FC = () => {
           fontSize: '19px',
           display: 'flex',
         }}
-        className={styles.color} 
+        className={styles.color}
       />
       <div className={styles.wallet}>Connect Wallet</div>
       <AvatarBox

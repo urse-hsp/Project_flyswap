@@ -1,24 +1,19 @@
 // 运行时配置文件
 import { useState } from 'react';
-import Footer from '@/components/Footer';
-// import HeaderView from '@/components/Header';
-import TabNavigation from '@/components/Header/tabNavigation';
-import RightContent from '@/components/Header/RightContent';
+import Footer from './Footer';
+// import HeaderView from './Header';
+import TabNavigation from './Header/tabNavigation';
+import RightContent from './Header/RightContent';
 import type { RunTimeLayoutConfig } from '@umijs/max';
 // import { history } from '@umijs/max';
 import routesList from '../../config/routes';
-import { ConfigProvider } from 'antd';
 
 // ProLayout 支持的api https://procomponents.ant.design/components/layout
 
 export const layout: RunTimeLayoutConfig = ({
   initialState,
-  setInitialState,
+  // setInitialState,
 }) => {
-  console.log(initialState);
-  console.log(setInitialState);
-  console.log(9999);
-
   // const match = useRouteData();
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [routeData, setRouteData] = useState<any[]>([]);
@@ -55,23 +50,21 @@ export const layout: RunTimeLayoutConfig = ({
     },
     pageTitleRender: false,
     hideInMenu: false,
-    token: {
-      header: {
-        colorBgHeader: '#FFFFFF',
-        colorTextMenu: '#4B9F94',
-        colorTextMenuSecondary: 'red',
-        colorTextMenuSelected: '#4B9F94',
-        colorTextMenuActive: '#4B9F94',
-      },
-    },
-    childrenRender: (children, props) => {
+    // token: {
+    //   header: {
+    //     colorBgHeader: '#FFFFFF',
+    //     colorTextMenu: '#4B9F94',
+    //     colorTextMenuSecondary: 'red',
+    //     colorTextMenuSelected: '#4B9F94',
+    //     colorTextMenuActive: '#4B9F94',
+    //   },
+    // },
+    childrenRender: (children) => {
       if (initialState?.loading) return 123;
       return (
         <>
-          {/* <ConfigProvider prefixCls="custom"> */}
           {routeData?.length > 0 && <TabNavigation data={routeData} />}
           <div className="root-main">{children}</div>
-          {/* </ConfigProvider> */}
         </>
       );
     },

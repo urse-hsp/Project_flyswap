@@ -1,4 +1,4 @@
-// import logo_img from '@/assets/logo.png';
+import { theme } from './theme';
 /**
  * @name
  */
@@ -9,7 +9,7 @@ const Settings: any & {
   title: 'FlySwap',
   colorWeak: false,
   navTheme: 'light',
-  colorPrimary: '#349084',
+  colorPrimary: theme,
   layout: 'top',
   contentWidth: 'Fixed',
   fixedHeader: true,

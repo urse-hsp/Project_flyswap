@@ -2,7 +2,7 @@ import { GlobalOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import classNames from 'classNames';
 import { getLocale } from '@umijs/max';
 import { Divider, Button } from 'antd';
-import Money from '@/components/Header/RightContent/money';
+import Money from '../Header/RightContent/money';
 import footer_logo_img from '@/assets/images/logo/footer_logo.png';
 import twitter_logo_img from '@/assets/images/logo/twitter_logo.png';
 import telegram_logo_img from '@/assets/images/logo/telegram_logo.png';

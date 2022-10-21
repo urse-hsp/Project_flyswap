@@ -1,23 +1,22 @@
-// https://umijs.org/config/
 import { defineConfig } from '@umijs/max';
 import { join } from 'path';
 import defaultSettings from './defaultSettings';
 import proxy from './proxy';
 import routes from './routes';
+import theme from './theme';
 
 const { REACT_APP_ENV } = process.env;
 
 export default defineConfig({
   // manifest: {},
-  mfsu: {
-    shared: {
-      react: {
-        singleton: true,
-      },
-    },
-  },
-  // npmClient: 'yarn',
-  // mfsu: false,
+  // mfsu: {
+  //   shared: {
+  //     react: {
+  //       singleton: true,
+  //     },
+  //   },
+  // },
+  npmClient: 'yarn',
   /**
    * @name 开启 hash 模式
    * @description 让 build 之后的产物包含 hash 后缀。通常用于增量发布和避免浏览器加载缓存。
@@ -46,13 +45,7 @@ export default defineConfig({
    * @doc antd的主题设置 https://ant.design/docs/react/customize-theme-cn
    * @doc umi 的theme 配置 https://umijs.org/docs/api/config#theme
    */
-  theme: {
-    // 如果不想要 configProvide 动态设置主题需要把这个设置为 default
-    // 只有设置为 variable， 才能使用 configProvide 动态设置主色调
-    'root-entry-name': 'variable',
-    '@primary-color': defaultSettings['colorPrimary'],
-    primaryColor: 'red',
-  },
+  theme: { ...theme },
   /**
    * @name moment 的国际化配置
    * @description 如果对国际化没有要求，打开之后能减少js的包大小
@@ -108,7 +101,9 @@ export default defineConfig({
    * @description 内置了 babel import 插件
    * @doc https://umijs.org/docs/max/antd#antd
    */
-  antd: {},
+  antd: {
+    import: true,
+  },
   /**
    * @name 网络请求配置
    * @description 它基于 axios 和 ahooks 的 useRequest 提供了一套统一的网络请求和错误处理方案。
