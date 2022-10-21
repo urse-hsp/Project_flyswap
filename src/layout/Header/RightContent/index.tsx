@@ -4,6 +4,7 @@ import { Space } from 'antd';
 import React from 'react';
 import Money from './money';
 import Avatar, { AvatarBox } from './AvatarDropdown';
+import { BaseModal } from '@/components';
 import styles from './index.less';
 
 export type SiderTheme = 'light' | 'dark';
@@ -23,6 +24,7 @@ const GlobalHeaderRight: React.FC = () => {
   }
   return (
     <Space className={className}>
+      <BaseModal isModalOpen footerButtons={[]} />
       <Money />
       <SelectLang
         style={{ display: 'flex' }}
