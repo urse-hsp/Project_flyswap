@@ -1,2 +1,52 @@
-// .swap {
-// }
+@import '@/styles/lay.less';
+
+.swap {
+  color: @primary-color;
+
+  .header {
+    padding: 28px 28px 0;
+    text-align: center;
+
+    .title {
+      font-size: 24px;
+      font-family: DIN-BoldAlternate, DIN;
+      font-weight: bold;
+      position: relative;
+      color: @primary-color;
+    }
+
+    .content {
+      color: @primary-color;
+      // font-size: 14px;
+    }
+
+    .right {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: @primary-color;
+      .grid();
+    }
+  }
+
+  .main {
+    padding: 27px 16px;
+
+    .data {
+      line-height: 35px;
+    }
+
+    .btn {
+      margin-top: 20px;
+      .flyBtnFn();
+    }
+  }
+
+  :global {
+    .ant-divider {
+      margin: 0;
+    }
+  }
+}

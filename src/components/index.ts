@@ -1,3 +1,3 @@
 // export * from './affix'
 
-// export { default as Affix } from './affix';
+export { default as ItemView } from './itemView';

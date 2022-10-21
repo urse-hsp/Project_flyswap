@@ -3,7 +3,7 @@ import { outLogin } from '@/services/ant-design-pro/api';
 import {
   LogoutOutlined,
   SettingOutlined,
-  UserOutlined,
+  // UserOutlined,
   DownOutlined,
 } from '@ant-design/icons';
 import { history, useModel } from '@umijs/max';
@@ -104,7 +104,7 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
       ? [
           {
             key: 'center',
-            icon: <UserOutlined />,
+            // icon: <UserOutliwned />,
             label: '个人中心',
           },
           {

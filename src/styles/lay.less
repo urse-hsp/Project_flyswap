@@ -3,6 +3,10 @@
   display: flex;
 }
 
+.flexWarp {
+  flex-wrap: wrap;
+}
+
 .flexItemCenter {
   display: flex;
   align-items: center;
@@ -41,4 +45,26 @@
   line-clamp: 2;
   display: box;
   -webkit-box-orient: vertical;
+}
+
+// 宫格布局
+.grid(@num:3, @width: 12px) {
+  display: grid;
+  grid-gap: @width;
+  grid-template-columns: repeat(@num, 1fr);
+}
+
+.flyBtn {
+  width: 296px;
+  height: 48px;
+  background: @primary-color;
+  border-radius: 16px;
+  opacity: 0.75;
+}
+.flyBtnFn() {
+  width: 296px;
+  height: 48px;
+  background: @primary-color;
+  border-radius: 16px;
+  opacity: 0.75;
 }
