@@ -1,9 +1,5 @@
 import { Modal, Space, Button } from 'antd';
-import React, {
-  useImperativeHandle,
-  forwardRef,
-  // Fragment,
-} from 'react';
+import React, { useImperativeHandle, forwardRef, Fragment } from 'react';
 import { usePopup } from '@/utils/hooks';
 import type { ModalProps } from 'antd';
 import classNames from 'classnames';
@@ -17,11 +13,11 @@ const BaseModal: React.FC<BaseModalProps> = forwardRef((props, ref?: any) => {
     onClose,
     onOk,
     onCancel,
-    // okText = '确定',
-    // okType = 'primary',
+    okText = '确定',
+    okType = 'primary',
     cancelText = '关闭',
-    // footerButtons,
-    // confirmLoading,
+    footerButtons,
+    confirmLoading,
     ...modalProps
   } = props;
   const {
@@ -53,13 +49,13 @@ const BaseModal: React.FC<BaseModalProps> = forwardRef((props, ref?: any) => {
         className={classNames('fly-base-modal', modalProps.className)}
         footer={
           <div className="fly-base-modal-footer">
-            <Space size={8}>
-              <Button onClick={onCancel}>{cancelText}</Button>
-              <Button type="primary" onClick={onCancel}>
-                Confirm
-              </Button>
-            </Space>
             {/* <Space size={8}>
+              <Button onClick={onCancel}>{cancelText}</Button>
+              <Button type="primary" onClick={onOk}>
+                确认
+              </Button>
+            </Space> */}
+            <Space size={8}>
               {!!footerButtons ? (
                 footerButtons?.map((item: any, i: number) => {
                   if (item === 'close') {
@@ -70,7 +66,7 @@ const BaseModal: React.FC<BaseModalProps> = forwardRef((props, ref?: any) => {
                     );
                   }
                   const {
-                    text,
+                    // text,
                     onClick = () => {},
                     isClose = false,
                     ...btnProps
@@ -105,7 +101,7 @@ const BaseModal: React.FC<BaseModalProps> = forwardRef((props, ref?: any) => {
                   )}
                 </Fragment>
               )}
-            </Space> */}
+            </Space>
           </div>
         }
       ></Modal>
@@ -114,4 +110,3 @@ const BaseModal: React.FC<BaseModalProps> = forwardRef((props, ref?: any) => {
 });
 
 export default BaseModal;
-

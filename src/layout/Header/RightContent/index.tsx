@@ -24,7 +24,7 @@ const GlobalHeaderRight: React.FC = () => {
   }
   return (
     <Space className={className}>
-      <BaseModal isModalOpen footerButtons={[]} />
+      <BaseModal isModalOpen onOk={() => {}} />
       <Money />
       <SelectLang
         style={{ display: 'flex' }}
