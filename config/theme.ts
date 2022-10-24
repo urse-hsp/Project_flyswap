@@ -1,4 +1,5 @@
 export const theme = '#349084';
+// 227268 // 颜色更深
 
 export default {
   // 如果不想要 configProvide 动态设置主题需要把这个设置为 default

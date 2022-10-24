@@ -1,5 +1,3 @@
-import { ButtonProps } from 'antd';
-
 export interface ExtendProps {
   isModalOpen?: boolean;
   onClose?: () => any;
@@ -32,12 +30,15 @@ export interface ExtendProps {
   /**
    * @description 自定义按钮列表
    */
-  footerButtons?: (
-    | (ButtonProps & { text: string; isClose?: boolean })
-    | 'close'
-  )[];
   /**
    * @description OK按钮的loading状态
    */
   confirmLoading?: boolean;
+  showCancel?: boolean;
+  /**
+   * @description View
+   */
+  footerAfterView?: any;
+  btnBlock?: boolean; //  Block 按钮
+  footer?: any;
 }

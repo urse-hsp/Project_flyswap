@@ -24,7 +24,15 @@ const GlobalHeaderRight: React.FC = () => {
   }
   return (
     <Space className={className}>
-      <BaseModal isModalOpen onOk={() => {}} />
+      <BaseModal
+        isModalOpen
+        onOk={() => {}}
+        width={430}
+        title="Unstake LP tokens"
+        // footer={false}
+      >
+        123
+      </BaseModal>
       <Money />
       <SelectLang
         style={{ display: 'flex' }}

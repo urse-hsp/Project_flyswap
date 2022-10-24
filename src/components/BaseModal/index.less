@@ -1,17 +1,40 @@
 .fly-base-modal {
   .ant-modal-content {
     border-radius: 30px;
+    overflow: hidden;
   }
 
   .ant-modal-footer {
     padding: 10px 24px;
+    border: none;
   }
 
-  .ant-modal-body {
+  .ant-modal-header {
+    // border: none;
+
+    .ant-modal-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: @primary-color;
+    }
   }
 
   &-footer {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &-footerAfterView {
+    width: 100%;
+  }
+
+  &-btn {
+    width: 179px;
+    height: 48px;
+    border-radius: 16px;
+    border: 1px solid @primary-color;
+    margin-left: 0 !important;
   }
 }
